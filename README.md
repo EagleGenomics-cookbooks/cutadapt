@@ -1,11 +1,14 @@
 # cutadapt
+
+
+Description
+===========
+This Cookbook to installs cutadapt.
+
 cutadapt removes adapter sequences from high-throughput sequencing data. 
 This is usually necessary when the read length of the sequencing machine 
 is longer than the molecule that is sequenced, for example when 
 sequencing microRNAs.
-
-Description
-===========
 
 https://code.google.com/p/cutadapt/
 
@@ -25,13 +28,26 @@ is in your PATH.
 
 Usage
 =====
+Simply include the recipe wherever you would like it installed, such as a run list (recipe[cutadapt]) or a cookbook (include_recipe 'cutadapt')
 
+## Testing
+To test the recipe we use chef test kitchen:
+
+kitchen converge default-centos65 
+
+kitchen login default-centos65
+
+kitchen verify default-centos65
+
+kitchen destroy default-centos65
 
 License and Authors
 ===================
 
 * Authors:: Bart Ailey (<chef@eaglegenomics.com>)
-    
+* Authors:: Dan Barrel (<chef@eaglegenomics.com>)
+* Authors:: Nick James (<chef@eaglegenomics.com>)
+
 Copyright:: 2015, Eagle Genomics Ltd
     
 Licensed under the Apache License, Version 2.0 (the "License");
