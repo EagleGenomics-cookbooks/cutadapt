@@ -17,7 +17,7 @@ end
 
 ##########################################################
 
-python_pip "cutadapt" do
+python_pip 'cutadapt' do
   version node['cutadapt']['version']
 end
 
