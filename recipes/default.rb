@@ -20,6 +20,9 @@ package ['python-devel'] do
   action :install
 end
 
+execute 'rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm' do
+end
+
 package ['python-pip'] do
   action :install
 end
