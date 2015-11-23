@@ -5,10 +5,7 @@ Description
 ===========
 This Cookbook to installs cutadapt.
 
-cutadapt removes adapter sequences from high-throughput sequencing data. 
-This is usually necessary when the read length of the sequencing machine 
-is longer than the molecule that is sequenced, for example when 
-sequencing microRNAs.
+Cutadapt removes adapter sequences from high-throughput sequencing data. This is usually necessary when the read length of the sequencing machine is longer than the molecule that is sequenced, for example when sequencing microRNAs.
 
 https://code.google.com/p/cutadapt/
 
@@ -18,13 +15,11 @@ Requirements
 ## Platform:
 
 * Centos 6.5
-* RHEL 6.5
 
 Notes
 =====
-The file is unzipped in /usr/local/qualimap_[VERSION] which contains the qulimap executable.
-A symbolic is created in /usr/local/bin to this file, which you can access as long as /usr/local/bin
-is in your PATH. 
+
+
 
 Usage
 =====
@@ -45,7 +40,7 @@ License and Authors
 ===================
 
 * Authors:: Bart Ailey (<chef@eaglegenomics.com>)
-* Authors:: Dan Barrel (<chef@eaglegenomics.com>)
+* Authors:: Dan Barrell (<chef@eaglegenomics.com>)
 * Authors:: Nick James (<chef@eaglegenomics.com>)
 
 Copyright:: 2015, Eagle Genomics Ltd
@@ -64,6 +59,3 @@ limitations under the License.
     
 ToDo
 ====
-
-Package install for Ubuntu.
-
