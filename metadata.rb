@@ -4,7 +4,7 @@ maintainer_email 'chef@eaglegenomics.com'
 license 'all_rights'
 description 'Installs/Configures cutadapt'
 long_description 'Installs/Configures cutadapt'
-version '1.0.0'
+version '1.0.1'
 
 depends 'build-essential'
 depends 'magic_shell'
