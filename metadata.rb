@@ -1,9 +1,9 @@
 name 'cutadapt'
-maintainer 'The Authors'
+maintainer 'Eagle Genomics'
 maintainer_email 'chef@eaglegenomics.com'
-license 'all_rights'
+license 'apache2'
 description 'Installs/Configures cutadapt'
-long_description 'Installs/Configures cutadapt'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.0.1'
 
 depends 'build-essential'
