@@ -41,7 +41,7 @@ License and Authors
 ===================
 
 * Authors:: Bart Ailey (<chef@eaglegenomics.com>)
-* Authors:: Dan Barrelll (<chef@eaglegenomics.com>)
+* Authors:: Dan Barrell (<chef@eaglegenomics.com>)
 * Authors:: Nick James (<chef@eaglegenomics.com>)
 
 Copyright:: 2016, Eagle Genomics Ltd, Apache License, Version 2.0
