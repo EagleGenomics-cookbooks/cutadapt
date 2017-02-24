@@ -16,6 +16,7 @@ env:
   - RUBYOPT="-W0"
   matrix:
   - CHEF_VERSION=current INSTANCE=default-centos-65
+  - CHEF_VERSION=current INSTANCE=default-ubuntu-1404
 before_script:
 - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
   -N DOCKER )
