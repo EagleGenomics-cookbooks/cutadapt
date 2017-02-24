@@ -5,5 +5,5 @@ end
 
 describe command('cutadapt -help') do
   its(:exit_status) { should eq 0 }
-  its(:stdout) { should contain ENV['CUTADAPT_VERSION'] }
+  its(:stdout) { should include('1.9.1') }
 end
