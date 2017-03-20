@@ -14,6 +14,7 @@ services: docker
 env:
   global:
   - RUBYOPT="-W0"
+  - secure: ZdTSoRPDuWD+kp94y+7YaJLisTaQ1NBfQQfiHSqcCuogGNTVmXjt8HBXIiKj5WQLzxyQCnx8Q/jybg/G/z/WM1otTmwpveZiyfDs85jzuCSviN1BOnEcNZdgcMNjncoHMx0+XfmfYCOFMZ4BiOh9GG8SbgGgHArGs4+W6r3643Flm+jjwL4WbG/KEh28tSr5x2TAyhAKkZ6fjOTrpXbjT/XQrDKL7sUigNBhzI3h1dz2IaLQI7O91BSblXFpUP0wGpcQVk+GZn5lDFm5joieU6oYYmpMQ/qSLp2BubKdLDfG6lTKzcHkJuRuyUYkbCwauxWjXBShV4KlewvOTNSZEWl/PAycXtcch6KW9bt9f1vYCqcNZIm5JJ3GlC4XY/dHnc6ptSDetJSM7Gv6oHIwjhSk2tSrM2agxLGQmrsaS0lHKz+zTKuh5iJdcRxumcJ/C2gJbkQSUF0aGpL/+dWWK/7Eocp6XuHDuwUH4KkRUk48WrhRKX+51S3qfE47/kutRvccKhZSID21JbFb+c0/Vd6IynMgm1WJ2MPFWvHB7dRO+Ym50+ApeGLKZcPNA3gXJSCZl3iWzVN78QxzngSbusZNjEwxQonlwEMxmRv4pAcLeSucxIe2W+9aK4e1PFvuWSz5nbRpiLsWJpRCHOnmR9nxG9qtU3b6NM/mtj+R3VM=
   matrix:
   - CHEF_VERSION=current INSTANCE=default-centos-65
   - CHEF_VERSION=current INSTANCE=default-ubuntu-1404
@@ -24,8 +25,12 @@ before_script:
 - chef gem install kitchen-docker
 - "/opt/chefdk/bin/chef exec rake tests"
 script:
-- KITCHEN_LOCAL_YAML=.kitchen.docker.yml 
+- KITCHEN_LOCAL_YAML=.kitchen.docker.yml
 - travis_wait 35 /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
+after_success:
+- chmod +x trigger_dependent_build.sh
+- "./trigger_dependent_build.sh EagleGenomics-cookbooks cutadapt_runnable private
+  $TRAVIS_ACCESS_TOKEN"
 notifications:
   slack:
     secure: Gj0eAI05wZW7MZxQkZ0uSjR0emK4cwCWRiQOHFIR4vAhYkbHdk/uEq6LzxNTyHpQWPXjEyd1jf2LQJPz0ZSQ5U0nbgU44fZSmEEjQR/EAcvYvxYl4dYFzRbOES7OVEACnEzHna6YzcTImUYYbSleIn0aiudeaRg+G8q4qAQms6jENFAoUBEnhVdLxZBLVkWToo0kwVcykU55y+woZJ/ue9YRaILsFjjdnbAhCzoxEgh8Jy8FissCINj2oS4pJBjBh8KHPt98Iqfs8mF3I1bmQJEZPADM62WLMNNgutpBUKq8/o/isGmsczmzQLpUWF35Z+Bh9OgB5xSCznL477KQvYzy5lVpjZxzmDDlGT7TVxm6Ksk2aDnyW9oBKmQdc3HRUCL2O3/odPlc3BDnIq6UvDjNnME+CpuL5tmoejL+ox38gMsJBKJF8LWr3N9YzY5/HZ7moRyzLclvNIAxVzn9Ltb/k7xXclLkho9eRifxgqvxkxhqji1ybmvUQAbOHSHZb/vhwU792h7n+HjCkAzr0r6Ii2yKDvra1Y69yQOv0Bwv0+K6kGdBIjDK/xRPbraMyJ3sz0/do38wF/IvsSPZkF6tBDR9lwZJfs1MYIfTzaW4pUlaj4y7s5cgZDI6HU9wexdjCqrpcKl0hxxoRy/3kjmUl4ip2JcirSc7KTOIwFs=
