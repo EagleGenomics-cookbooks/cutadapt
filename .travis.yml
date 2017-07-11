@@ -17,6 +17,7 @@ env:
   - secure: ZdTSoRPDuWD+kp94y+7YaJLisTaQ1NBfQQfiHSqcCuogGNTVmXjt8HBXIiKj5WQLzxyQCnx8Q/jybg/G/z/WM1otTmwpveZiyfDs85jzuCSviN1BOnEcNZdgcMNjncoHMx0+XfmfYCOFMZ4BiOh9GG8SbgGgHArGs4+W6r3643Flm+jjwL4WbG/KEh28tSr5x2TAyhAKkZ6fjOTrpXbjT/XQrDKL7sUigNBhzI3h1dz2IaLQI7O91BSblXFpUP0wGpcQVk+GZn5lDFm5joieU6oYYmpMQ/qSLp2BubKdLDfG6lTKzcHkJuRuyUYkbCwauxWjXBShV4KlewvOTNSZEWl/PAycXtcch6KW9bt9f1vYCqcNZIm5JJ3GlC4XY/dHnc6ptSDetJSM7Gv6oHIwjhSk2tSrM2agxLGQmrsaS0lHKz+zTKuh5iJdcRxumcJ/C2gJbkQSUF0aGpL/+dWWK/7Eocp6XuHDuwUH4KkRUk48WrhRKX+51S3qfE47/kutRvccKhZSID21JbFb+c0/Vd6IynMgm1WJ2MPFWvHB7dRO+Ym50+ApeGLKZcPNA3gXJSCZl3iWzVN78QxzngSbusZNjEwxQonlwEMxmRv4pAcLeSucxIe2W+9aK4e1PFvuWSz5nbRpiLsWJpRCHOnmR9nxG9qtU3b6NM/mtj+R3VM=
   matrix:
   - CHEF_VERSION=current INSTANCE=default-ubuntu-1404
+  - CHEF_VERSION=current INSTANCE=default-centos-6.5
 before_script:
 - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
   -N DOCKER )
