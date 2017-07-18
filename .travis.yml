@@ -33,7 +33,9 @@ after_success:
   $TRAVIS_ACCESS_TOKEN"
 notifications:
   slack:
+    on_success: change
+    on_failure: change
     secure: Gj0eAI05wZW7MZxQkZ0uSjR0emK4cwCWRiQOHFIR4vAhYkbHdk/uEq6LzxNTyHpQWPXjEyd1jf2LQJPz0ZSQ5U0nbgU44fZSmEEjQR/EAcvYvxYl4dYFzRbOES7OVEACnEzHna6YzcTImUYYbSleIn0aiudeaRg+G8q4qAQms6jENFAoUBEnhVdLxZBLVkWToo0kwVcykU55y+woZJ/ue9YRaILsFjjdnbAhCzoxEgh8Jy8FissCINj2oS4pJBjBh8KHPt98Iqfs8mF3I1bmQJEZPADM62WLMNNgutpBUKq8/o/isGmsczmzQLpUWF35Z+Bh9OgB5xSCznL477KQvYzy5lVpjZxzmDDlGT7TVxm6Ksk2aDnyW9oBKmQdc3HRUCL2O3/odPlc3BDnIq6UvDjNnME+CpuL5tmoejL+ox38gMsJBKJF8LWr3N9YzY5/HZ7moRyzLclvNIAxVzn9Ltb/k7xXclLkho9eRifxgqvxkxhqji1ybmvUQAbOHSHZb/vhwU792h7n+HjCkAzr0r6Ii2yKDvra1Y69yQOv0Bwv0+K6kGdBIjDK/xRPbraMyJ3sz0/do38wF/IvsSPZkF6tBDR9lwZJfs1MYIfTzaW4pUlaj4y7s5cgZDI6HU9wexdjCqrpcKl0hxxoRy/3kjmUl4ip2JcirSc7KTOIwFs=
   email:
     on_success: change
-    on_failure: always
+    on_failure: change
