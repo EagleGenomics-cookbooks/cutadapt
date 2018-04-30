@@ -1,11 +1,5 @@
 sudo: required
 dist: trusty
-addons:
-  apt:
-    sources:
-    - chef-stable-trusty
-    packages:
-    - chefdk
 install: echo "skip bundle install"
 branches:
   only:
@@ -23,14 +17,13 @@ before_script:
   -N DOCKER )
 - eval "$(/opt/chefdk/bin/chef shell-init bash)"
 - chef gem install kitchen-docker
-- "/opt/chefdk/bin/chef exec rake tests"
+- /opt/chefdk/bin/chef exec rake tests
 script:
 - KITCHEN_LOCAL_YAML=.kitchen.docker.yml
 - travis_wait 35 /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
 after_success:
 - chmod +x trigger_dependent_build.sh
-- "./trigger_dependent_build.sh EagleGenomics-cookbooks cutadapt_runnable private
-  $TRAVIS_ACCESS_TOKEN"
+- ./trigger_dependent_build.sh EagleGenomics-cookbooks cutadapt_runnable private $TRAVIS_ACCESS_TOKEN
 notifications:
   slack:
     on_success: change
