@@ -6,7 +6,10 @@
 ##########################################################
 
 include_recipe 'apt' if node['platform_family'] == 'debian'
-include_recipe 'build-essential'
+build_essential 'install essential' do
+  action :install
+end
+
 include_recipe 'python'
 
 ##########################################################
