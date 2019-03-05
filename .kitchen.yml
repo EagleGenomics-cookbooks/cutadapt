@@ -8,6 +8,7 @@ provisioner:
   
 verifier:
   name: inspec
+  sudo_command: . /etc/profile;
 
 platforms:
   - name: ubuntu-18.04
