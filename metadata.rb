@@ -11,5 +11,4 @@ source_url 'https://github.com/EagleGenomics-cookbooks/cutadapt'
 issues_url 'https://github.com/EagleGenomics-cookbooks/cutadapt/issues'
 
 depends 'magic_shell'
-depends 'pyenv'
 depends 'python_setup'
