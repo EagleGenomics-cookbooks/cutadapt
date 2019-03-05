@@ -14,4 +14,3 @@ supports 'centos', '= 6.5'
 
 depends 'magic_shell'
 depends 'python'
-depends 'apt'
