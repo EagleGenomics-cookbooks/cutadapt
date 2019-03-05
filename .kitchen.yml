@@ -1,17 +1,22 @@
+---
 driver:
   name: docker
-  use_sudo: false
+
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 12.19.36
+  product_version: 14.10
+  
 verifier:
   name: inspec
-  sudo_command: . /etc/profile;
+
 platforms:
-- name: centos-6.5
-- name: ubuntu-14.04
+  - name: ubuntu-18.04
+
 suites:
-- name: default
-  run_list:
-  - recipe[cutadapt::default]
-  attributes:
+  - name: default
+    run_list:
+      - recipe[cutadapt::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
