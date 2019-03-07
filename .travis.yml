@@ -27,6 +27,3 @@ script:
 
 after_script:
 - /opt/chefdk/embedded/bin/kitchen destroy ${INSTANCE}
-
-script: KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify
-  ${INSTANCE} ${INSTANCE}
