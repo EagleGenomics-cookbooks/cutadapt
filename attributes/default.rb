@@ -1,1 +1,1 @@
-default['cutadapt']['version'] = '1.9.1'
+default['cutadapt']['version'] = '2.9'
