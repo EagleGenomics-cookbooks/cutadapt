@@ -4,7 +4,8 @@ driver:
 
 provisioner:
   name: chef_zero
-  product_version: 14.10
+  product_version: '14.10'
+  product_name: chef
   
 verifier:
   name: inspec

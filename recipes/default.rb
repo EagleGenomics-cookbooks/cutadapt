@@ -1,10 +1,8 @@
 #
-# Cookbook Name:: cutadapt
+# Cookbook:: cutadapt
 # Recipe:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
-##########################################################
-
+# Copyright:: 2019, Eagle Genomics Ltd, All Rights Reserved.
 include_recipe 'python_setup'
 
 pyenv_pip 'cutadapt' do
